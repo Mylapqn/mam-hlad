@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-9">
+    <meta name="viewport" content="width=device-width, initial-scale=10.0">
+    <title>jacykacy.html</title>
+</head>
+<style>
+    html {
+        overflow: hidden;
+        user-select: none;
+    }
+
+    .zook {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 10vh;
+        font-size: 200px;
+        color: #000000;
+        z-index: 1000;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    .ifg {
+        width: 1500px;
+        height: 1500px;
+    }
+
+    body {
+        padding:0;
+        margin:0;
+        perspective: 200px;
+        animation: kowče .09s infinite alternate;
+        perspective-origin: 1px 1px;
+        margin-top: 0px;
+    }
+
+    body .bg {
+        width: 100vw;
+        height: 100vh;
+        background-color: #ffffff;
+    }
+
+    body .div {
+        position: absolute;
+        left: 40%;
+        color: red;
+        overflow: hidden;
+        width: 20%;
+        height: 666px;
+        background: rgb(158, 154, 154);
+        box-shadow: inset 2px 2px 5px black;
+        top: 100px;
+        /*font-size: 30px;*/
+        animation: koč 5s infinite forwards linear, koče 0.3s infinite alternate;
+    }
+
+    body .qwe {
+        position: absolute;
+        left: 10%;
+        color: red;
+        overflow: hidden;
+        width: 20%;
+        height: 250px;
+        background: rgb(158, 154, 154);
+        box-shadow: inset 2px 2px 5px black;
+        top: 400px;
+        animation: qwer 5s infinite forwards linear, koče 5s infinite alternate;
+    }
+
+    body .wer {
+        position: absolute;
+        right: 10%;
+        color: red;
+        overflow: hidden;
+        width: 100px;
+        height: 100px;
+        background: rgb(158, 154, 154);
+        box-shadow: inset 2px 2px 5px black;
+        top: 400px;
+        animation: qwer 5s infinite backwards linear, koče 5s infinite backwards alternate;
+    }
+
+    .anim {
+        animation: koer 1.1s infinite alternate, koče 0.3s infinite alternate;
+    }
+
+    .koc {
+        animation: koče 0.1s infinite alternate;
+    }
+
+    @keyframes qwer {
+        0% {
+            filter: hue-rotate(0deg);
+            transform: rotate3d(0, 0, 0, 0deg);
+        }
+
+        100% {
+            filter: hue-rotate(360deg);
+            transform: rotate3d(0, 1, 1, 360deg);
+        }
+    }
+
+    @keyframes koer {
+        0% {
+            filter: hue-rotate(0deg);
+            transform: rotate3d(0, 0, 0, 90deg);
+        }
+
+        100% {
+            filter: hue-rotate(360deg);
+            transform: rotate3d(1, 0, 0, 90deg);
+        }
+    }
+
+    @keyframes koč {
+        0% {
+            filter: hue-rotate(0deg);
+            transform: rotate3d(1, 0, 0, 0deg);
+        }
+
+        100% {
+            filter: hue-rotate(360deg);
+            transform: rotate3d(1, 0, 0, 360deg);
+        }
+    }
+
+    @keyframes koče {
+        0% {
+            filter: invert(0%);
+        }
+
+        100% {
+            filter: invert(100%);
+        }
+    }
+
+    @keyframes kowče {
+        0% {
+            perspective: 200px;
+        }
+
+        100% {
+            perspective: 180px;
+        }
+    }
+
+    @keyframes a {
+        0% {
+            opacity: 0;
+        }
+
+        30% {
+            opacity: 0;
+        }
+
+        50% {
+            opacity: 1;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+    .kook{
+        position: absolute;
+        top: 50vh;
+        left: 50vw;
+        width: 1400px;
+        height: 10vh;
+        font-size: 200px;
+        text-align:center;
+        color: #ebc935;
+        z-index: 1000;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        transform:translate(-700px,0) rotate3d(1,0,0,60deg);
+        text-shadow:0px 3px 0px #000000;
+        
+    }
+    .kook .kos {
+        position:relative;
+        animation:roll 40s infinite linear;
+        line-height:50px;
+        height:250px;
+
+    }
+    @keyframes roll {
+        0% {
+            top:0vh;
+        }
+
+        100% {
+            top:-200vh;
+        }
+    }
+</style>
+<script>
+    document.onmousemove = function (e) {
+        document.body.style.perspectiveOrigin = "" + e.pageX + "px " + e.pageY + "px";
+        if (document.getElementById("alert").currentTime >= 0.12)
+            document.getElementById("alert").currentTime = 0.09;
+        document.getElementById("alert").play();
+        //console.log(e.pageY/document.body.clientHeight);
+        document.getElementById("alert").playbackRate = (1 - (e.pageY / 1000));
+        document.getElementById("alert").volume = 0.5 * (1 - (e.pageY / 1000));
+        document.getElementById("energx").playbackRate = (1 - (e.pageY / 1000));
+        document.body.style.filter = "invert(" + e.pageY / 10 + "%)";
+        //document.body.style.perspectiveOrigin = "100px 100px";
+        //console.log(document.body.style.perspectiveOrigin, "" +e.pageX + "px " + e.pageY + " px");
+        //document.body.style.perspectiveOrigin = 1 + "px " + 1 + " px";
+    }
+    document.onmousedown = function (e) {
+        dis = 63;
+        document.getElementById("tutu").currentTime = 5.3;
+        document.getElementById("tutu").play();
+    }
+    function onload(){
+    document.getElementById("stirrings").playbackRate = 1;
+    console.log("owkre");
+    document.getElementById("tutu").volume = 0.5;
+
+    }
+    const event = new Event('fa');
+
+
+    document.addEventListener('fa', faf, { once: false });
+    const eventa = new Event('faa');
+
+
+    document.addEventListener('faa', fafa, { once: false });
+
+
+
+    var dis = 0;
+    setTimeout(() => {
+        faf();
+    }, 100);
+    function faf() {
+
+        dis = 0;
+        var orig = document.getElementById("conten").innerHTML + "";
+        write();
+        function write() {
+            if (dis > orig.length) {
+                console.log("OKK", dis, orig.length);
+
+                //kon = false;
+                document.dispatchEvent(event);
+                return;
+            }
+            else {
+                dis++;
+                document.getElementById("conten").innerHTML = orig.substring(0, dis);
+
+                console.log(dis, orig.length);
+                setTimeout(write, 80);
+                //setTimeout(write, Math.random()*150+100);
+
+            }
+
+        }
+    }
+
+    var disa = 0;
+    setTimeout(() => {
+        fafa();
+    }, 100);
+    function fafa() {
+
+        disa = 0;
+        let origa = document.getElementById("conten2").innerHTML;
+        writea();
+        function writea() {
+            if (disa > origa.length) {
+                console.log("OKKA", disa);
+
+                //kon = false;
+                document.getElementById("stirrings").currentTime = 0;
+                document.dispatchEvent(eventa);
+                return;
+            }
+            else {
+                disa++;
+                document.getElementById("conten2").innerHTML = origa.substring(0, disa);
+                var all = document.getElementsByClassName("stirrings");
+                for (let i = 0; i < 13; i++) {
+                    let element = all.item(i);
+                    element.innerHTML = origa.substring(0, disa);
+
+                }
+
+                console.log(disa, origa.length);
+                setTimeout(writea, 120);
+                //setTimeout(write, Math.random()*150+100);
+
+            }
+
+        }
+    }
+</script>
+
+<body onload="onload();">
+    <div class="bg"></div>
+    <div class="zook"><span id="conten">
+MILITARY ALERT !!!!!!!!!                                        Tö   Tö   Tö Tö             </span>
+        <span style="animation:a .5s infinite alternate;">|</span>
+    </div>
+    <!--<div style="position:absolute;left:0;top:0;background:black;z-index:1000;width:100vw;height:100vh;"></div>-->
+    <div class="kook" style="font-size:50px;"><h1 class="kos"style="height:100px;">MILITARY ALERT!!!!!</h1><div class="kos"><span id="conten2" class="stirrings">
+From the first stirrings of life beneath water,             to the great beasts of the stone age,               to man taking his
+first upright steps,             you have come far.                  Now begins your greatest quest,                  from this early cradle of
+civilization      on  towards the stars.             </span>
+<span style="animation:a .5s infinite alternate;">|</span></div>
+<div class="kos"><span class="stirrings"></span><span style="animation:a .5s infinite alternate;">|</span></div>
+<div class="kos"><span class="stirrings"></span><span style="animation:a .5s infinite alternate;">|</span></div>
+<div class="kos"><span class="stirrings"></span><span style="animation:a .5s infinite alternate;">|</span></div>
+<div class="kos"><span class="stirrings"></span><span style="animation:a .5s infinite alternate;">|</span></div>
+<div class="kos"><span class="stirrings"></span><span style="animation:a .5s infinite alternate;">|</span></div>
+<div class="kos"><span class="stirrings"></span><span style="animation:a .5s infinite alternate;">|</span></div>
+<div class="kos"><span class="stirrings"></span><span style="animation:a .5s infinite alternate;">|</span></div>
+<div class="kos"><span class="stirrings"></span><span style="animation:a .5s infinite alternate;">|</span></div>
+<div class="kos"><span class="stirrings"></span><span style="animation:a .5s infinite alternate;">|</span></div>
+<div class="kos"><span class="stirrings"></span><span style="animation:a .5s infinite alternate;">|</span></div>
+<div class="kos"><span class="stirrings"></span><span style="animation:a .5s infinite alternate;">|</span></div>
+<div class="kos"><span class="stirrings"></span><span style="animation:a .5s infinite alternate;">|</span></div>
+<div class="kos"><span class="stirrings"></span><span style="animation:a .5s infinite alternate;">|</span></div>
+<div class="kos"><span class="stirrings"></span><span style="animation:a .5s infinite alternate;">|</span></div>
+<div class="kos"><span class="stirrings"></span><span style="animation:a .5s infinite alternate;">|</span></div>
+
+    </div>
+    <div class="zook" style="font-size:10px;">
+    </div>
+
+    nemůýeme vrátit nějaký ty změny aby zase bylo vidět koče a tak?
+    já to nějak předělám
+    yes
+    lepší?:jojsa a
+
+
+    <div class="anim" style="position:absolute;top:50%;left:70%;font-size:100px;z-index:100;">👨🏿‍🦰mám hlad JDI
+        JÍST CO???????????????????<blockquote class="twitter-tweet">
+
+    </div>
+
+
+    <audio id="boom" autoplay loop>
+        <source src="https://mylapqn.github.io/stuffgame/game3/sound/explosion.wav" type="audio/wav"> </audio>
+    <audio id="alert" autoplay>
+        <source src="SoundBlock_Alert3_l.mp3" type="audio/mp3"> </audio>
+    <audio autoplay loop>
+        <source src="ahttp://10.200.140.14:8000/alarm.ogg" type="audio/ogg"> </audio>
+    <audio id="tutu" autoplay loop>
+        <source
+            src="https://cdn.discordapp.com/attachments/662324618211885086/663394413006946309/voice-2015-01-07-12-24.mp3"
+            type="audio/mp3"> </audio>
+    <audio autoplay loop>
+        <source src="aRealFemPlayVocDeath2d02.wav" type="audio/wav"> </audio>
+    <audio autoplay loop>
+        <source src="aworm-roar-alt-big-2.ogg" type="audio/ogg"> </audio>
+    <audio id="energx" autoplay loop>
+        <source src="aHudVocEnergyLow.mp3" type="audio/mp3"> </audio>
+            <audio id="stirrings" autoplay loop>
+                <source src="Stirrings2.mp3" type="audio/mp3"> </audio>
+                    <audio autoplay loop>
+                        <source src="sStirrings2.mp3" type="audio/mp3"> </audio>
+            
+    <!--  <iframe class="ifg" src="http://10.200.140.7:5500/index.html" frameborder="0"></iframe>  -->
+
+
+    nádhera
+    chceme koče???aon
+    nefituje
+    i
+    nemůžeme ten ctotal-cases-covid-19?tab dát někam vedle? nevim
+    máme strašně málo prostoru nname to že je to multidimenzionální
+
+    <div class="div">
+        <blockquote class="twitter-tweet">
+            <p lang="en" dir="ltr"><a href="https://twitter.com/aldomit_cz/status/1196225655966457856">May 31, 2017</a>
+        </blockquote>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        <img class="koc" src="small_cat.jpg" alt="">
+        <h1>J̸̡̡̡̡̨̡̢̛̛̭̺̹̲̮̙̞͎͓̞̪͙͙͈̪̤̙̞͔̼̯̟̪̤̭̠̣̞̤͍͍̩͍̻̯͙̼̞͖̖̙̥̥̙̻͔͙͖̞̣̮̼͖͖̤͍͎͎̣̦͖͍̮̗̫͎̥̭̬̟͉͙̠͔͍̰͕͇̻̦̣̮̖̹͓̩̼̒̔̊̈̈́̈́́̊̓̐̍͑͋̍̿͑̋̏͑͋̈́̋̇͊͂̃͋́̉́͗̊̑̊͛̊͐̒̑̀͌̅̇͗̐̆͊̄͊͛̔̓͒̄͛̎͋̋͆͌̌͐̐̄̀̆̆͑̈́̓̕̚̕͘̚͜͜͜͜͜͝͝͠͠͠Ḁ̶̢̛͔̝͇̙̪͇̼̞͕̳̪̘̲͉̼̫̖̤̘̤̻͎̠̲̰͎̠̭̠̱͇̳͓̯̺͍̬̝̺̓̈́͐͗̈́͛͑̉̀̓̓͆̋́̀͋̌́͂̉̃̆̽̐̒́͑̓̐̆͋̾̉͆̄̄́̃̓͋̃͋̏̇̑̆̀̂͑̋͗̅̃̈͛̇̊͑͒͌͑̑͆̉̏̿̔̎̄́̕͘̕͘͘͜͜͜͜͠͠͝͠C̴̡̡̨̢̡̢̛͓̗͚͕̥̼͇̪̼͓̝̫̜̤͔͓̜̟̥̰͍̰̘̩̱̥͉͎̩̼̘̻̮̪̖͍̹̦̹̠͖͙̜̥̜̺̭̰̲̭̲̰̈̆̅́̌̅̎́̇͗͂̽̀̈̇̔̊̋̍̂͆̈́͊͌̄̂̃̋̒͒͗̏̒̐̄͒̔͒̂̋̕̚̚͜͜͜͝͝͠ͅͅË̵̢̢̢̧̢̧̢̨͈̣̗͓̝͚̞͙̩͉̦̖̻̤̩̩̬̦͉̱̭̯͔̱̘̫̣͎̲͕̠͈̰̺̞̬̪̙͓͚̱̜̥̝̹͎͔͓̰̪̪̫̟͈̬̫̹̬̣̤̱̫̳͉̠̣͈͈͚̰͇͉̳͇̙̦̘͈̳̜̠̼̘̼̪͇͈̗̫͕́̀̏͛͐̓̇̓̂̍͆̐̾͗̔̍́̏̍̄̽̾͊̈̍̇̑̈́̏̓̉͂́̇̋̉̆̈̒̾̈́͂̿̈͛̒͗̄̊̍̄͛̇̑̕̚̕͘͜͝͠K̵̡̨̨̨̧̨̨̨̛̞̱̤̩͓͔̘̝͚̙͕̙͙̻̰̣̭͖͖̱̪̱̫͙̺̙̩̹̩̬͎̠̰̪͕̜͎̝͉̹͍͈͙͈̥̭̬̬̬̠͍̻̘̝̫̯͉̙̣̦͍̱͙̞̜̫͚͎̞̤͍̝̪̖̲̞̻̮̲̭̮͑͒̂͒̈͗͆̓̈́́̌́̂̀͜͜😂😂😂😂😂😂<label><input
+                type="checkbox" checked ></label></h1>
+        <hh4 style="display: block;">rotate3d eh? joj</hh4>
+        👨🏻‍🦽 👩🏻‍🦽👨🏻‍🦽 👩🏻‍🦽👨🏻‍🦽 👩🏻‍🦽👨🏻‍🦽 👩🏻‍🦽👨🏻‍🦽 👩🏻‍🦽
+        wa aw <a href="${1}">${0}</a> das aw <a href="${1}">${0}</a> kjhwh izi zapne kpbihvb bhj hh1gzg hutt tgjn
+        mně se zapne chrome<br>
+        sám asi když to spustíte<br>
+        wtf<br>
+        došlo k výjimce nejspíše vlivem rozšíření<br>
+        Mylapqn 02:21
+        has left the Live Share session
+        co?
+
+    </div>
+
+    <div class="qwe">
+
+        <blockquote class="twitter-tweet">
+            <p lang="en" dir="ltr"><a href="https://twitter.com/aldomit_cz/status/1202371228557828096">May 31, 2017</a>
+        </blockquote>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        <hh4 style="display: block;"></hh4>
+    </div>
+
+    <div class="wer">
+
+        <img class="koc" src="strelak-06_16-007.gif" alt=""width=100>
+        <hh4 style="display: block;"></hh4>
+    </div>
+</body>
+
+</html>
